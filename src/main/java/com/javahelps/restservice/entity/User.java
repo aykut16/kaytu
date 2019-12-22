@@ -2,54 +2,55 @@ package com.javahelps.restservice.entity;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 
 
 @Entity
 
-
+@Table(name="foods")
 public class User {
 
 	@Id
-	private String username;
-	private String password;
-	private String name;
-	private String email;
+	private String yemek;
+	private String protein;
+	private String yag;
+	private String karbon;
 
-	public String getUsername() {
-		return username;
+	public String getYemek() {
+		return yemek;
 	}
 
-	public void setUsername(String username) {
-		this.username = username;
+	public void setYemek(String yemek) {
+		this.yemek = yemek;
 	}
 
-	public String getPassword() {
-		return password;
+	public String getProtein() {
+		return protein;
 	}
 
-	public void setPassword(String password) {
-		this.password = password;
+	public void setProtein(String protein) {
+		this.protein = protein;
 	}
 
-	public String getName() {
-		return name;
+	public String getYag() {
+		return yag;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setYag(String yag) {
+		this.yag = yag;
 	}
 
-	public String getEmail() {
-		return email;
+	public String getKarbon() {
+		return karbon;
 	}
 
-	public void setEmail(String email) {
-		this.email = email;
+	public void setKarbon(String karbon) {
+		this.karbon = karbon;
 	}
 
 	@Override
 	public String toString() {
-		return "User{" + "username='" + username + '\'' + ", password='" + password + '\'' + ", name='" + name + '\''
-				+ ", email='" + email + '\'' + '}';
+		return "User{" + "='" + yemek + '\'' + ", protein='" + protein + '\'' + ", yag='" + yag + '\''
+				+ ", karbon='" + karbon + '\'' + '}';
 	}
 }

@@ -6,9 +6,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
 
 import com.javahelps.restservice.entity.User;
-import com.javahelps.restservice.entity.User2;
+
 import com.javahelps.restservice.repository.UserRepository;
-import com.javahelps.restservice.repository.UserRepository2;
+
+
+
 
 @SpringBootApplication
 public class Application {

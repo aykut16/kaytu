@@ -19,7 +19,7 @@ import com.javahelps.restservice.repository.UserRepository;
 import javassist.tools.web.BadHttpRequest;
 
 @RestController
-@RequestMapping(path = "/users")
+@RequestMapping(path = "/foods")
 public class UserController {
 
 	@Autowired
@@ -30,9 +30,9 @@ public class UserController {
 		return repository.findAll();
 	}
 
-	@GetMapping(path = "/{username}")
-	public User find(@PathVariable("username") String username) {
-		return repository.findOne(username);
+	@GetMapping(path = "/{yemek}")
+	public User find(@PathVariable("yemek") String yemek) {
+		return repository.findOne(yemek);
 	}
 
 	@PostMapping(consumes = "application/json")
@@ -40,15 +40,15 @@ public class UserController {
 		return repository.save(user);
 	}
 
-	@DeleteMapping(path = "/{username}")
-	public void delete(@PathVariable("username") String username) {
-		repository.delete(username);
+	@DeleteMapping(path = "/{yemek}")
+	public void delete(@PathVariable("yemek") String yemek) {
+		repository.delete(yemek);
 	}
 
-	@PutMapping(path = "/{username}")
-	public User update(@PathVariable("username") String username, @RequestBody User user) throws BadHttpRequest {
-		if (repository.exists(username)) {
-			user.setUsername(username);
+	@PutMapping(path = "/{yemek}")
+	public User update(@PathVariable("yemek") String yemek, @RequestBody User user) throws BadHttpRequest {
+		if (repository.exists(yemek)) {
+			user.setYemek(yemek);
 			return repository.save(user);
 		} else {
 			throw new BadHttpRequest();
